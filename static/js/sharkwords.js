@@ -19,27 +19,40 @@ let numWrong = 0;
 // Loop over the chars in `word` and create divs.
 //
 const createDivsForChars = (word) => {
-  // Replace this with your code
+  // loop over each letter in word (parameter)
+  for (const letter of word) {
+  // create div for each letter and append the div to section w/id: word-container
+    $('#word-container').append(`<div class="letter-box ${letter}"></div>`);
+  }
+
 };
 
 // Loop over each letter in `ALPHABET` and generate buttons.
 //
-const generateLetterButtons = () => {
-  // Replace this with your code
+const generateLetterButtons = () => 
+{
+  for (const letter of ALPHABET) 
+  {
+    $('#letter-buttons').append(`<button>${letter}</button>`);
+  }
 };
 
 // Set the `disabled` property of `buttonEl` to `true.
 //
 // `buttonEl` is an `HTMLElement` object.
 //
-const disableLetterButton = (buttonEl) => {
-  // Replace this with your code
+const disableLetterButton = (buttonEl) => 
+{
+  const button = $(buttonEl);
+  button.prop('disabled', true);
 };
 
 // Return `true` if `letter` is in the word.
 //
 const isLetterInWord = (letter) => {
   // Replace this with your code
+  const sections = $('#word-container');
+  //$('div.nonexistent-class') === undefined;
 };
 
 // Called when `letter` is in word. Update contents of divs with `letter`.
@@ -68,7 +81,7 @@ const resetGame = () => {
 (function startGame() {
   // For now, we'll hardcode the word that the user has to guess.
   const word = 'hello';
-
+  console.log('hello');
   createDivsForChars(word);
   generateLetterButtons();
 
